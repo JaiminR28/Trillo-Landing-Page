@@ -258,7 +258,7 @@
 }
 
 /////////////////////////////////////////////
-///  BUTTON BOTTOM
+///  BUTTON INLINE
 .btn-inline {
 	border: none;
 	color: var(--color-primary);
@@ -270,8 +270,17 @@
 	cursor: pointer;
 	transition: all 0.2s;
 
+	& span {
+		margin-left: 3px;
+		transition: margin-left 0.2s;
+	}
+
 	&:hover {
 		color: var(--color-grey-dark-1);
+
+		span {
+			margin-left: 8px;
+		}
 	}
 
 	&:focus {
@@ -368,24 +377,61 @@
 /////////////////////////////////////////////
 ///  REVIEWS
 .review {
+	background-color: #fff;
+	box-shadow: var(--shadow-light);
+	padding: 3rem;
+	margin-bottom: 3.5rem;
+	position: relative;
+	overflow: hidden;
+
 	&__text {
+		margin-bottom: 2rem;
+		z-index: 10;
+		position: relative;
 	}
 
 	&__user {
+		display: flex;
+		align-items: center;
 	}
 
 	&__photo {
+		height: 4.5rem;
+		width: 4.5rem;
+		border-radius: 50%;
+		margin-right: 1.5rem;
 	}
-
 	&__user-box {
 	}
 
 	&__user-name {
+		font-size: 1.1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: 0.4rem;
 	}
 
 	&__user-date {
+		font-size: 1rem;
+		color: var(--color--grey--dark--3);
 	}
 
 	&__rating {
+		display: flex;
+		font-size: 2.8rem;
+		color: var(--color-primary);
+		margin-left: auto;
+	}
+
+	&::before {
+		content: "\201C";
+		position: absolute;
+		z-index: 0;
+		top: -2.75rem;
+		left: -1rem;
+		font-size: 20rem;
+		color: var(--color--grey--light--2);
+		font-family: sans-serif;
+		line-height: 1;
 	}
 }
